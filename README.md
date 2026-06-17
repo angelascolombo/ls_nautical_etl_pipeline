@@ -30,10 +30,78 @@ To guarantee high performance in analytical queries and facilitate seamless inte
 
 The structure consists of a central fact table surrounded by dimension tables, enabling granular analysis by customer, product, time, and geographic location.
 
-### Model Architecture
+## 🏗️ Model Architecture
+
+### Fact Table
+
+* **`sales.csv`**
+  * **Description:** Central table of the model. It stores every occurred sales transaction and quantitative metrics.
+  * **Schema:**
+    ```sql
+    ├── sale_id (PK)
+    ├── client_id (FK)
+    ├── product_id (FK)
+    ├── sale_date 
+    ├── product_qty (Quantity of products sold)
+    └── sale_total_BRL 
+    ```
+
+---
+
+### Dimension Tables
+
+* **`customers.csv`**
+  * **Description:** Stores descriptive information and attributes about the customers.
+  * **Schema:**
+    ```sql
+    ├── client_id (PK)
+    ├── client_name
+    ├── client_email
+    ├── client_state
+    └── client_city
+    ```
+
+* **`products.csv`**
+  * **Description:** Stores catalog information, categories, and pricing details for all products.
+  * **Schema:**
+    ```sql
+    ├── product_id (PK)
+    ├── product_name
+    ├── product_category
+    └── list_price_BRL (Product unit price)
+    ```
+
+---
+
+### Auxiliary Tables
+
+* **`costs.csv`**
+  * **Description:** Stores information on product purchase costs. Since products are imported, they are purchased in US Dollars (USD) and converted to Brazilian Real (BRL).
+  * **Schema:**
+    ```sql
+    ├── purchase_id (PK)
+    ├── product_id (FK)
+    ├── purchase_date 
+    ├── unit_cost_USD 
+    ├── exchange_date 
+    ├── exchange_rate 
+    └── unit_cost_BRL
+    ```
+
+* **`financial_report.csv`**
+  * **Description:** A consolidated view or report that aggregates sales data with production/import costs to display profitability metrics.
+  * **Schema:**
+    ```sql
+    ├── sale_id (FK)
+    ├── purchase_id (FK)
+    ├── sale_total_BRL
+    ├── total_cost_BRL
+    └── gross_profit_BRL
+    ```
 
 
 ---
 ## 📈 Next Steps
-* Final joining of the fact table with import costs (`custos_importacao.json`) and exchange rates (`bcdata.sgs.csv`) to calculate net profit and currency conversion margins.
-* Building business metrics (such as RFM Analysis - Recency, Frequency, Monetary).
+
+* **Advanced Business Analytics:** Implement business metrics and advanced segmentation, such as **RFM Analysis** (Recency, Frequency, Monetary), to uncover customer behavior patterns.
+* **Interactive Dashboard:** Build a dynamic dashboard to visualize sales performance, profitability trends, and key performance indicators (KPIs).

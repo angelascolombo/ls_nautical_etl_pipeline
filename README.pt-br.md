@@ -46,8 +46,6 @@ A estrutura consiste em uma tabela fato central cercada por tabelas dimensão, p
     └── sale_total_BRL 
     ```
 
----
-
 ### Tabelas Dimensão
 
 * **`customers.csv`**
@@ -70,8 +68,6 @@ A estrutura consiste em uma tabela fato central cercada por tabelas dimensão, p
     ├── product_category
     └── list_price_BRL (Preço unitário do produto)
     ```
-
----
 
 ### Tabelas Auxiliares
 

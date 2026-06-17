@@ -1,6 +1,6 @@
 # Nautilus Data Insights: Maritime Sales Pipeline & Dimensional Modeling
 
-🌐 *Read this in Portuguese (BR):* **English** | [Português](#-nautilus-data-insights-pipeline-de-vendas-marítimas-e-modelagem-dimensional)
+🌐  Read this in [Portuguese (BR)](#-nautilus-data-insights-pipeline-de-vendas-marítimas-e-modelagem-dimensional)
 
 ---
 
@@ -10,7 +10,7 @@ The primary objective is to transform raw, multi-format data (CSV, JSON) into an
 
 ## 🚀 Technologies Used
 
-* **Python 3.x**
+* **Python 3.12**
 * **Pandas:** Data cleaning, manipulation, and transformation.
 * **Regex (Regular Expressions):** Text standardization and complex string extraction.
 * **Jupyter Notebook / Google Colab:** Development and prototyping environment.

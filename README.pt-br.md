@@ -34,7 +34,7 @@ A estrutura consiste em uma tabela fato central cercada por tabelas dimensão, p
 
 ### Tabela Fato
 
-* **`sales.csv`**
+* **`fact_sales.csv`**
   * Tabela central do modelo. Armazena todas as transações de vendas ocorridas e as métricas quantitativas.
   * **Esquema:**
     ```sql
@@ -48,7 +48,7 @@ A estrutura consiste em uma tabela fato central cercada por tabelas dimensão, p
 
 ### Tabelas Dimensão
 
-* **`customers.csv`**
+* **`dim_customers.csv`**
   * Armazena informações descritivas e atributos sobre os clientes.
   * **Esquema:**
     ```sql
@@ -59,7 +59,7 @@ A estrutura consiste em uma tabela fato central cercada por tabelas dimensão, p
     └── client_city
     ```
 
-* **`products.csv`**
+* **`dim_products.csv`**
   * Armazena informações do catálogo, categorias e detalhes de preços de todos os produtos.
   * **Esquema:**
     ```sql
@@ -71,7 +71,7 @@ A estrutura consiste em uma tabela fato central cercada por tabelas dimensão, p
 
 ### Tabelas Auxiliares
 
-* **`costs.csv`**
+* **`aux_costs.csv`**
   * Armazena informações sobre os custos de compra dos produtos. Como os produtos são importados, eles são adquiridos em Dólares Americanos (USD) e convertidos para o Real Brasileiro (BRL).
   * **Esquema:**
     ```sql
@@ -84,7 +84,7 @@ A estrutura consiste em uma tabela fato central cercada por tabelas dimensão, p
     └── unit_cost_BRL
     ```
 
-* **`financial_report.csv`**
+* **`aux_financial_summary.csv`**
   * Uma visão consolidada ou relatório que agrega os dados de vendas com os custos de produção/importação para exibir métricas de lucratividade.
   * **Esquema:**
     ```sql

@@ -1,4 +1,4 @@
-# Nautilus Data Insights: Pipeline de Vendas Marítimas e Modelagem Dimensional
+# LH Nautical Data Insights: Pipeline de Vendas Marítimas e Modelagem Dimensional
 
 🌐 Read this in [English](README.md)
 

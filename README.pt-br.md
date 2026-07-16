@@ -1,4 +1,4 @@
-# LH Nautical Data Insights: Pipeline de Vendas Marítimas e Modelagem Dimensional
+# LS Nautical: Pipeline ETL e Modelagem Dimensional
 
 🌐 Read this in [English](README.md)
 

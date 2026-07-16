@@ -32,7 +32,7 @@ A estrutura consiste em uma tabela fato central cercada por tabelas dimensão, p
 
 ## 🏗️ Arquitetura do Modelo
 
-### Tabela Fato
+### Tabelas Fato
 
 * **`fact_sales.csv`**
   * Tabela central do modelo. Armazena todas as transações de vendas ocorridas e as métricas quantitativas.
@@ -44,6 +44,19 @@ A estrutura consiste em uma tabela fato central cercada por tabelas dimensão, p
     ├── sale_date 
     ├── product_qty (Quantidade de produtos vendidos)
     └── sale_total_BRL 
+    ```
+    
+* **`aux_costs.csv`**
+  * Armazena informações sobre os custos de compra dos produtos. Como os produtos são importados, eles são adquiridos em Dólares Americanos (USD) e convertidos para o Real Brasileiro (BRL).
+  * **Esquema:**
+    ```sql
+    ├── purchase_id (PK)
+    ├── product_id (FK)
+    ├── purchase_date 
+    ├── unit_cost_USD 
+    ├── exchange_date 
+    ├── exchange_rate 
+    └── unit_cost_BRL
     ```
 
 ### Tabelas Dimensão
@@ -69,20 +82,8 @@ A estrutura consiste em uma tabela fato central cercada por tabelas dimensão, p
     └── list_price_BRL (Preço unitário do produto)
     ```
 
-### Tabelas Auxiliares
+### Tabela Auxiliar
 
-* **`aux_costs.csv`**
-  * Armazena informações sobre os custos de compra dos produtos. Como os produtos são importados, eles são adquiridos em Dólares Americanos (USD) e convertidos para o Real Brasileiro (BRL).
-  * **Esquema:**
-    ```sql
-    ├── purchase_id (PK)
-    ├── product_id (FK)
-    ├── purchase_date 
-    ├── unit_cost_USD 
-    ├── exchange_date 
-    ├── exchange_rate 
-    └── unit_cost_BRL
-    ```
 
 * **`aux_financial_summary.csv`**
   * Uma visão consolidada ou relatório que agrega os dados de vendas com os custos de produção/importação para exibir métricas de lucratividade.

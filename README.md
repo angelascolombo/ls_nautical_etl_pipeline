@@ -1,4 +1,4 @@
-# LH Nautical Data Insights: Maritime Sales Pipeline & Dimensional Modeling
+# LS Nautical: ETL Pipeline & Dimensional Modeling
 
 🌐  Leia isto em [Português (BR)](README.pt-br.md)
 
@@ -28,7 +28,7 @@ The project mitigates data inconsistencies from source systems through the follo
 
 To guarantee high performance in analytical queries and facilitate seamless integration with Data Visualization tools (such as Power BI or Tableau), the data architecture follows a **Star Schema** pattern.
 
-The structure consists of a central fact table surrounded by dimension tables, enabling granular analysis by customer, product and sales.
+The structure consists of two fact tables surrounded by dimension and auxiliar tables, enabling granular analysis by customer, product and sales.
 
 ## 🏗️ Model Architecture
 

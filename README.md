@@ -32,7 +32,7 @@ The structure consists of a central fact table surrounded by dimension tables, e
 
 ## 🏗️ Model Architecture
 
-### Fact Table
+### Fact Tables
 
 * **`fact_sales.csv`**
   * Central table of the model. It stores every occurred sales transaction and quantitative metrics.
@@ -44,6 +44,18 @@ The structure consists of a central fact table surrounded by dimension tables, e
     ├── sale_date 
     ├── product_qty (Quantity of products sold)
     └── sale_total_BRL 
+    ```
+* **`fact_costs.csv`**
+  * Stores information on product purchase costs. Since products are imported, they are purchased in US Dollars (USD) and converted to Brazilian Real (BRL).
+  * **Schema:**
+    ```sql
+    ├── purchase_id (PK)
+    ├── product_id (FK)
+    ├── purchase_date 
+    ├── unit_cost_USD 
+    ├── exchange_date 
+    ├── exchange_rate 
+    └── unit_cost_BRL
     ```
 
 ### Dimension Tables
@@ -69,20 +81,7 @@ The structure consists of a central fact table surrounded by dimension tables, e
     └── list_price_BRL (Product unit price)
     ```
 
-### Auxiliary Tables
-
-* **`aux_costs.csv`**
-  * Stores information on product purchase costs. Since products are imported, they are purchased in US Dollars (USD) and converted to Brazilian Real (BRL).
-  * **Schema:**
-    ```sql
-    ├── purchase_id (PK)
-    ├── product_id (FK)
-    ├── purchase_date 
-    ├── unit_cost_USD 
-    ├── exchange_date 
-    ├── exchange_rate 
-    └── unit_cost_BRL
-    ```
+### Auxiliary Table
 
 * **`aux_financial_summary.csv`**
   * A consolidated view or report that aggregates sales data with production/import costs to display profitability metrics.

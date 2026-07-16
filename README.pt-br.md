@@ -28,7 +28,7 @@ O projeto mitiga as inconsistências de dados dos sistemas de origem através da
 
 Para garantir alta performance em consultas analíticas e facilitar a integração com ferramentas de Visualização de Dados (como Power BI ou Tableau), a arquitetura de dados segue o padrão **Star Schema** (Modelo Estrela).
 
-A estrutura consiste em uma tabela fato central cercada por tabelas dimensão, permitindo análises granulares por cliente, produto e vendas.
+A estrutura consiste em duas tabelas fato cercada por tabelas de dimensão e de auxílio, permitindo análises granulares por cliente, produto e vendas.
 
 ## 🏗️ Arquitetura do Modelo
 

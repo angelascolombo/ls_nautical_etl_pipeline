@@ -46,7 +46,7 @@ A estrutura consiste em duas tabelas fato cercada por tabelas de dimensão e de 
     └── sale_total_BRL 
     ```
     
-* **`aux_costs.csv`**
+* **`fact_costs.csv`**
   * Armazena informações sobre os custos de compra dos produtos. Como os produtos são importados, eles são adquiridos em Dólares Americanos (USD) e convertidos para o Real Brasileiro (BRL).
   * **Esquema:**
     ```sql
